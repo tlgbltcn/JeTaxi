@@ -1,6 +1,6 @@
 package com.tlgbltcn.jetaxi.data.repository
 
-import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
+import com.tlgbltcn.jetaxi.domain.mapper.TaxisMapper
 import com.tlgbltcn.jetaxi.data.remote.JeTaxiService
 import com.tlgbltcn.jetaxi.di.IoDispatcher
 import com.tlgbltcn.jetaxi.feature.map.TaxisState

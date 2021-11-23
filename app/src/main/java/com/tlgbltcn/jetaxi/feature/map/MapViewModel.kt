@@ -2,7 +2,7 @@ package com.tlgbltcn.jetaxi.feature.map
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tlgbltcn.jetaxi.data.repository.JeTaxiRepository
+import com.tlgbltcn.jetaxi.domain.usecase.JeTaxiUseCase
 import com.tlgbltcn.jetaxi.feature.map.TaxisState.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MapViewModel @Inject constructor(
-    private val repository: JeTaxiRepository
+    private val useCase: JeTaxiUseCase
 ) : ViewModel() {
 
     private val viewModelState = MutableStateFlow(TaxisViewModelState(isLoading = true))
@@ -32,7 +32,7 @@ class MapViewModel @Inject constructor(
     private fun getTaxis() {
         viewModelState.update { it.copy(isLoading = true) }
         viewModelScope.launch {
-            val result: TaxisState = repository.getTaxis().single()
+            val result = useCase.execute().single()
             viewModelState.update {
                 when (result) {
                     is Content -> {
