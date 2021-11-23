@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.data.mapper
+package com.tlgbltcn.jetaxi.domain.mapper
 
 import com.tlgbltcn.jetaxi.data.model.TaxisDataModel
 import com.tlgbltcn.jetaxi.ui.model.FleetType

@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.data.mapper
+package com.tlgbltcn.jetaxi.domain.mapper
 
 interface Mapper<I, O> {
     fun map(input: I?): O

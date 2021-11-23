@@ -55,6 +55,9 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -119,4 +122,6 @@ dependencies {
     testImplementation "com.google.truth:truth:$truth_version"
     testImplementation "androidx.test.ext:truth:$truth_ext_version"
     testImplementation "com.squareup.okhttp3:mockwebserver:$mock_web_server_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 }

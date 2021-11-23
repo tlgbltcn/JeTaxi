@@ -1,8 +1,8 @@
 package com.tlgbltcn.jetaxi.di
 
-import com.tlgbltcn.jetaxi.data.mapper.CoordinateMapper
-import com.tlgbltcn.jetaxi.data.mapper.PoiMapper
-import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
+import com.tlgbltcn.jetaxi.domain.mapper.CoordinateMapper
+import com.tlgbltcn.jetaxi.domain.mapper.PoiMapper
+import com.tlgbltcn.jetaxi.domain.mapper.TaxisMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
