@@ -58,16 +58,6 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
     }
-    /*
-    sourceSets {
-        test {
-            resources {
-                srcDirs 'src\\test\\assets'
-            }
-        }
-    }
-
-     */
 }
 
 dependencies {
