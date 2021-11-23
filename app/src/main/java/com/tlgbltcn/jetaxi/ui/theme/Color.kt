@@ -2,7 +2,12 @@ package com.tlgbltcn.jetaxi.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val PurplePrimary = Color(0xFF772ECF)
+val PurplePrimaryVariant = Color(0xFF3700B3)
+val DarkBackground = Color(0xFF2A2A2B)
+
+val OrangePrimary = Color(0xFFFF5722)
+val OrangePrimaryVariant = Color(0xFFF44336)
+val LightBackground = Color(0xFFFFFFFF)
+
+

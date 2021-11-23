@@ -3,36 +3,25 @@ package com.tlgbltcn.jetaxi
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material.ExperimentalMaterialApi
+import coil.annotation.ExperimentalCoilApi
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.tlgbltcn.jetaxi.ui.navigation.JeTaxiNavGraph
 import com.tlgbltcn.jetaxi.ui.theme.JeTaxiTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalCoilApi
+@ExperimentalPagerApi
+@ExperimentalMaterialApi
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             JeTaxiTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+                JeTaxiNavGraph()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    JeTaxiTheme {
-        Greeting("Android")
     }
 }

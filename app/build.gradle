@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -20,8 +24,14 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField "String", "API_URL", "\"https://fake-poi-api.mytaxi.com/\""
+        }
+
         release {
             minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://fake-poi-api.mytaxi.com/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -49,17 +59,64 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.collection:collection-ktx:$collection_ktx_version"
+    implementation "com.google.android.libraries.maps:maps:$google_maps_version"
+    implementation "com.google.maps.android:maps-v3-ktx:$google_maps_ktx_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx_version"
+
+    // Compose
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
-    implementation 'androidx.activity:activity-compose:1.4.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
+    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
+    implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constraint_layout_compose_version"
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$retrofit_serialization_converter_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization_version"
+    implementation "io.coil-kt:coil-compose:$coil_version"
+    debugImplementation "com.github.chuckerteam.chucker:library:$chucker_version"
+    constraints {
+        implementation("com.android.volley:volley:$volley_version") {
+            because("Only volley 1.2.0 or newer are available on maven.google.com")
+        }
+    }
+
+    // Asynchronous
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_version"
+
+    // DI
+    implementation "com.google.dagger:hilt-android:$hilt_gradle_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_gradle_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_compose_navigation_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_gradle_version"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:$hilt_gradle_version"
+
+    // Test
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "androidx.test.ext:junit:$junit_ext_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "org.robolectric:robolectric:4.6.1"
+    androidTestImplementation "androidx.test:runner:1.4.0"
+    androidTestImplementation "androidx.test:rules:1.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+    testImplementation "androidx.arch.core:core-testing:$arch_core_test_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+    testImplementation "androidx.test.ext:truth:$truth_ext_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mock_web_server_version"
 }
