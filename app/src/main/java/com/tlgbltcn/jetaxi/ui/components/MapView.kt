@@ -15,7 +15,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.google.android.libraries.maps.MapView
 import com.tlgbltcn.jetaxi.R
-import com.tlgbltcn.jetaxi.data.model.TaxisDataModel
 import com.tlgbltcn.jetaxi.ui.model.Taxis
 import com.tlgbltcn.jetaxi.util.rememberMapViewWithLifecycle
 
