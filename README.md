@@ -45,6 +45,3 @@ When restricting the Key to Android apps, use `com.tlgbltcn.jetaxi` as package n
 #### To-Do in Future 
 
 - More test case.
-
-
-<br />Thanks for the [OpenTriviaDatabase](https://opentdb.com/).
