@@ -25,7 +25,7 @@ fun SelectedTaxiItemRow(modifier: Modifier = Modifier, data: Taxis.Poi) {
             modifier = Modifier
                 .padding(all = 8.dp)
         ) {
-            Text(data.fleetType.name ?: "", fontWeight = FontWeight.Bold)
+            Text(data.fleetType.name, fontWeight = FontWeight.Bold)
             CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
                 Text(text = "ID: ${data.id}", style = MaterialTheme.typography.body2)
                 Text(
