@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.navigation
+package com.tlgbltcn.jetaxi.presentation.ui.navigation
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -10,8 +10,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.pager.ExperimentalPagerApi
-import com.tlgbltcn.jetaxi.feature.map.MapPage
-import com.tlgbltcn.jetaxi.feature.map.MapViewModel
+import com.tlgbltcn.jetaxi.presentation.feature.map.MapPage
+import com.tlgbltcn.jetaxi.presentation.feature.map.MapViewModel
 
 const val HOME = "/"
 

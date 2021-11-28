@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.di
+package com.tlgbltcn.jetaxi.modules
 
 import dagger.Module
 import dagger.Provides

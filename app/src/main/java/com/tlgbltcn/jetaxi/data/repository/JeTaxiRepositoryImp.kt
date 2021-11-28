@@ -2,7 +2,7 @@ package com.tlgbltcn.jetaxi.data.repository
 
 import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
 import com.tlgbltcn.jetaxi.data.remote.JeTaxiService
-import com.tlgbltcn.jetaxi.di.IoDispatcher
+import com.tlgbltcn.jetaxi.modules.IoDispatcher
 import com.tlgbltcn.jetaxi.domain.model.Taxis
 import com.tlgbltcn.jetaxi.domain.repository.JeTaxiRepository
 import com.tlgbltcn.jetaxi.util.ResultHolder

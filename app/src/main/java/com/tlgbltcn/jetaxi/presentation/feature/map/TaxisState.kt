@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.feature.map
+package com.tlgbltcn.jetaxi.presentation.feature.map
 
 import com.tlgbltcn.jetaxi.domain.model.Taxis
 

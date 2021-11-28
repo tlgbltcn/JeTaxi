@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.feature.map
+package com.tlgbltcn.jetaxi.presentation.feature.map
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.theme
+package com.tlgbltcn.jetaxi.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

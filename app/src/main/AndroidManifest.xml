@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JeTaxi">
         <activity
-            android:name=".MainActivity"
+            android:name="com.tlgbltcn.jetaxi.presentation.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.JeTaxi.NoActionBar">

@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.components
+package com.tlgbltcn.jetaxi.presentation.ui.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

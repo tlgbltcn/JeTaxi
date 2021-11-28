@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.theme
+package com.tlgbltcn.jetaxi.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

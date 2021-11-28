@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.components
+package com.tlgbltcn.jetaxi.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

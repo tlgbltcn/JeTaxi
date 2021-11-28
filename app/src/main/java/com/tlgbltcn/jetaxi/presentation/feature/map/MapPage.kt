@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.feature.map
+package com.tlgbltcn.jetaxi.presentation.feature.map
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,7 +18,7 @@ import com.google.android.libraries.maps.model.BitmapDescriptorFactory
 import com.google.android.libraries.maps.model.LatLng
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
-import com.tlgbltcn.jetaxi.ui.components.*
+import com.tlgbltcn.jetaxi.presentation.ui.components.*
 import com.tlgbltcn.jetaxi.domain.model.Taxis
 import com.tlgbltcn.jetaxi.util.getMarkerIcon
 import kotlinx.coroutines.launch

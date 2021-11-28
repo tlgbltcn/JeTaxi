@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.di
+package com.tlgbltcn.jetaxi.modules
 
 import android.content.Context
 import coil.util.CoilUtils

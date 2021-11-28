@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.di
+package com.tlgbltcn.jetaxi.modules
 
 import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
 import com.tlgbltcn.jetaxi.data.remote.JeTaxiService

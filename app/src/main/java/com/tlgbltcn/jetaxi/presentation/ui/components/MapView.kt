@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.components
+package com.tlgbltcn.jetaxi.presentation.ui.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
