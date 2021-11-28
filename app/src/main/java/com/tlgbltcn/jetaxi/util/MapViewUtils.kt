@@ -32,7 +32,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import com.google.android.libraries.maps.GoogleMap
 import com.google.android.libraries.maps.MapView
 import com.tlgbltcn.jetaxi.R
-import com.tlgbltcn.jetaxi.ui.model.FleetType
+import com.tlgbltcn.jetaxi.domain.model.FleetType
 
 @Composable
 fun rememberMapViewWithLifecycle(): MapView {

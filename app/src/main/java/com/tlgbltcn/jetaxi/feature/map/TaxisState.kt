@@ -1,7 +1,6 @@
 package com.tlgbltcn.jetaxi.feature.map
 
-import com.tlgbltcn.jetaxi.ui.model.Taxis
-import java.lang.Exception
+import com.tlgbltcn.jetaxi.domain.model.Taxis
 
 sealed interface TaxisState {
 
@@ -22,7 +21,8 @@ sealed interface TaxisState {
 data class TaxisViewModelState(
     val taxis: List<Taxis.Poi>? = null,
     val isLoading: Boolean = false,
-    val exception: Exception? = null
+    val code: Int? = null,
+    val message: String? = null
 ) {
 
     fun toUiState(): TaxisState {
@@ -33,7 +33,7 @@ data class TaxisViewModelState(
             )
         } else {
             TaxisState.Error(
-                isLoading = isLoading, code = null, message = null
+                isLoading = isLoading, code = code, message = message
             )
         }
     }

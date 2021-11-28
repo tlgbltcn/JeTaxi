@@ -1,6 +1,5 @@
 package com.tlgbltcn.jetaxi.feature.map
 
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -20,7 +19,7 @@ import com.google.android.libraries.maps.model.LatLng
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
 import com.tlgbltcn.jetaxi.ui.components.*
-import com.tlgbltcn.jetaxi.ui.model.Taxis
+import com.tlgbltcn.jetaxi.domain.model.Taxis
 import com.tlgbltcn.jetaxi.util.getMarkerIcon
 import kotlinx.coroutines.launch
 
@@ -36,9 +35,8 @@ fun MapPage(
             ProgressView()
         } else {
             when (state) {
-                is TaxisState.Error -> {
-                    Log.d("JeTaxi", (state as TaxisState.Error).message ?: "error")
-                }
+                is TaxisState.Error -> ErrorView()
+
                 is TaxisState.Content -> {
                     (state as TaxisState.Content).taxis?.let { taxis ->
                         MapView(taxis) {

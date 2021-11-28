@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.ui.model
+package com.tlgbltcn.jetaxi.domain.model
 
 
 data class Taxis(

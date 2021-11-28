@@ -1,4 +1,4 @@
-package com.tlgbltcn.jetaxi.domain.mapper
+package com.tlgbltcn.jetaxi.data.mapper
 
 import android.os.Build.VERSION_CODES.Q
 import androidx.test.ext.junit.runners.AndroidJUnit4

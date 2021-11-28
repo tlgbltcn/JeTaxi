@@ -11,13 +11,12 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.tlgbltcn.jetaxi.R
-import com.tlgbltcn.jetaxi.ui.model.FleetType
-import com.tlgbltcn.jetaxi.ui.model.Taxis
+import com.tlgbltcn.jetaxi.domain.model.FleetType
+import com.tlgbltcn.jetaxi.domain.model.Taxis
 
 @Composable
 fun TaxiItemRow(

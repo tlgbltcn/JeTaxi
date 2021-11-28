@@ -9,8 +9,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.tlgbltcn.jetaxi.data.model.TaxisDataModel
-import com.tlgbltcn.jetaxi.ui.model.Taxis
+import com.tlgbltcn.jetaxi.domain.model.Taxis
 
 @Composable
 fun SelectedTaxiItemRow(modifier: Modifier = Modifier, data: Taxis.Poi) {
