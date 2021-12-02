@@ -15,28 +15,5 @@ sealed interface TaxisState {
         val message: String?,
         override val isLoading: Boolean = false
     ) : TaxisState
-
 }
-
-data class TaxisViewModelState(
-    val taxis: List<Taxis.Poi>? = null,
-    val isLoading: Boolean = false,
-    val code: Int? = null,
-    val message: String? = null
-) {
-
-    fun toUiState(): TaxisState {
-        return if (taxis.isNullOrEmpty().not()) {
-            TaxisState.Content(
-                taxis = taxis,
-                isLoading = isLoading
-            )
-        } else {
-            TaxisState.Error(
-                isLoading = isLoading, code = code, message = message
-            )
-        }
-    }
-}
-
 

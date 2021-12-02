@@ -15,7 +15,7 @@ class MapViewModel @Inject constructor(
     private val useCase: JeTaxiUseCase
 ) : ViewModel() {
 
-    private val viewModelState = MutableStateFlow(TaxisViewModelState(isLoading = true))
+    private val viewModelState = MutableStateFlow(MapViewModelState(isLoading = true))
 
     val uiState = viewModelState
         .map { it.toUiState() }
@@ -54,6 +54,27 @@ class MapViewModel @Inject constructor(
                     )
                 }
             }
+        }
+    }
+}
+
+data class MapViewModelState(
+    val taxis: List<Taxis.Poi>? = null,
+    val isLoading: Boolean = false,
+    val code: Int? = null,
+    val message: String? = null
+) {
+
+    fun toUiState(): TaxisState {
+        return if (taxis.isNullOrEmpty().not()) {
+            TaxisState.Content(
+                taxis = taxis,
+                isLoading = isLoading
+            )
+        } else {
+            TaxisState.Error(
+                isLoading = isLoading, code = code, message = message
+            )
         }
     }
 }
