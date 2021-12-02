@@ -3,6 +3,7 @@ package com.tlgbltcn.jetaxi.data.mapper
 import com.tlgbltcn.jetaxi.data.model.TaxisDataModel
 import com.tlgbltcn.jetaxi.domain.model.FleetType
 import com.tlgbltcn.jetaxi.domain.model.Taxis
+import com.tlgbltcn.jetaxi.util.ListMapper
 import javax.inject.Inject
 
 class PoiMapper @Inject constructor(private val coordinateMapper: CoordinateMapper) :
