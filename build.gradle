@@ -5,7 +5,7 @@ buildscript {
         kotlin_compailer_version = '1.5.31'
         core_ktx_version = '1.7.0'
         lifecycle_ktx_version = '2.4.0'
-        collection_ktx_version = '1.1.0'
+        collection_ktx_version = '1.2.0'
         hilt_gradle_version = '2.38.1'
         hilt_version = '1.0.0'
         compose_version = '1.0.5'
