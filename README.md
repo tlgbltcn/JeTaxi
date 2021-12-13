@@ -1,6 +1,6 @@
 **<h1 align="center"> JeTaxi </h1>**
 
-<p align="center">The JeTaxi application is sample based on CleanArchitecture - MVVM that fetches data from the network via repository pattern and shows them by Android Jetpack Libraries</p>
+<p align="center">The JeTaxi application is sample based on CleanArchitecture that fetches data from the network via repository pattern and shows them by Android Jetpack Libraries</p>
 
 <p align="center">
   <img src="https://media.giphy.com/media/grRXsPTjWFpJ6CWOKQ/giphy-downsized.gif" alt="animated" />
@@ -26,7 +26,7 @@
 
 #### Architecture 
 
-- CleanArchitecture - MVVM
+- CleanArchitecture
 [Android Architecture components](https://developer.android.com/topic/libraries/architecture)
 
 #### Note 
