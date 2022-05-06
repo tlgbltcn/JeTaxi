@@ -17,7 +17,8 @@ fun SelectedTaxiItemRow(modifier: Modifier = Modifier, data: Taxis.Poi) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(all = 8.dp), elevation = 8.dp
+            .padding(all = 8.dp),
+        elevation = 8.dp
     ) {
 
         Column(

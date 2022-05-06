@@ -11,6 +11,7 @@ buildscript {
         compose_version = '1.1.0-beta02'
         activity_compose_version = '1.4.0'
         appcompat_version = "1.4.1"
+        radiography_version = "2.4.1"
         material_version = "1.4.0"
         constraint_layout_compose_version = '1.0.0'
         hilt_compose_navigation_version = '1.0.0'
@@ -35,6 +36,7 @@ buildscript {
         google_maps_version = '3.1.0-beta'
         google_maps_ktx_version = '2.2.0'
         volley_version = '1.2.0'
+        ktlint_version = '10.2.1'
     }
     repositories {
         google()

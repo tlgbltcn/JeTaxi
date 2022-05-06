@@ -1,6 +1,5 @@
 package com.tlgbltcn.jetaxi.domain.model
 
-
 data class Taxis(
     val poiList: List<Poi>
 ) {

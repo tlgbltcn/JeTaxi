@@ -1,12 +1,29 @@
 package com.tlgbltcn.jetaxi.presentation.feature.map
 
-import androidx.compose.foundation.layout.*
+import android.util.Log
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.ModalBottomSheetLayout
+import androidx.compose.material.ModalBottomSheetValue
+import androidx.compose.material.rememberModalBottomSheetState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -18,19 +35,31 @@ import com.google.android.libraries.maps.model.BitmapDescriptorFactory
 import com.google.android.libraries.maps.model.LatLng
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
-import com.tlgbltcn.jetaxi.presentation.ui.components.*
 import com.tlgbltcn.jetaxi.domain.model.Taxis
+import com.tlgbltcn.jetaxi.presentation.ui.components.*
 import com.tlgbltcn.jetaxi.util.getMarkerIcon
 import kotlinx.coroutines.launch
+import radiography.ExperimentalRadiographyComposeApi
+import radiography.Radiography
+import radiography.ViewFilters.skipComposeTestTagsFilter
+import radiography.ViewStateRenderers.DefaultsIncludingPii
 
+internal const val LIVE_HIERARCHY_TEST_TAG = "live-hierarchy"
+
+@OptIn(ExperimentalRadiographyComposeApi::class)
 @ExperimentalMaterialApi
 @Composable
 fun MapPage(
     viewModel: MapViewModel
 ) {
+    val liveHierarchy = remember { mutableStateOf<String?>(null) }
     val state by viewModel.uiState.collectAsState()
 
     Column {
+
+        val prettyHierarchy = Radiography.scan()
+        Log.d("debug-drawer", prettyHierarchy)
+
         if (state.isLoading) {
             ProgressView()
         } else {
@@ -45,6 +74,13 @@ fun MapPage(
                     }
                 }
             }
+        }
+
+        SideEffect {
+            liveHierarchy.value = Radiography.scan(
+                viewStateRenderers = DefaultsIncludingPii,
+                viewFilter = skipComposeTestTagsFilter(LIVE_HIERARCHY_TEST_TAG)
+            )
         }
     }
 }
@@ -96,8 +132,8 @@ private fun MapViewContainer(
         googleMap.apply {
             setOnMarkerClickListener { p0 ->
                 taxis.find {
-                    it.coordinate.latitude == p0.position.latitude
-                            && it.coordinate.longitude == p0.position.longitude
+                    it.coordinate.latitude == p0.position.latitude &&
+                        it.coordinate.longitude == p0.position.longitude
                 }?.let {
                     selectedTaxi = it
                 }

@@ -7,7 +7,8 @@ sealed interface TaxisState {
     val isLoading: Boolean
 
     data class Content(
-        val taxis: List<Taxis.Poi>? = listOf(), override val isLoading: Boolean = false
+        val taxis: List<Taxis.Poi>? = listOf(),
+        override val isLoading: Boolean = false
     ) : TaxisState
 
     data class Error(
@@ -16,4 +17,3 @@ sealed interface TaxisState {
         override val isLoading: Boolean = false
     ) : TaxisState
 }
-
