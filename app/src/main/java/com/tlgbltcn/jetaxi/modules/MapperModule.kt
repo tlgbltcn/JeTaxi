@@ -6,9 +6,9 @@ import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ActivityRetainedComponent
 
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityRetainedComponent::class)
 @Module
 class MapperModule {
 

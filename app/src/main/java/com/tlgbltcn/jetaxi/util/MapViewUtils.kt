@@ -84,10 +84,12 @@ fun getMarkerIcon(context: Context, fleetType: FleetType): Bitmap? {
     }
 
     return Bitmap.createScaledBitmap(
-        (ContextCompat.getDrawable(
-            context,
-            resource
-        ) as BitmapDrawable).bitmap,
+        (
+            ContextCompat.getDrawable(
+                context,
+                resource
+            ) as BitmapDrawable
+            ).bitmap,
         110,
         60,
         false

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class CoordinateMapper @Inject constructor() :
     Mapper<TaxisDataModel.PoiDataModel.CoordinateDataModel,
-            Taxis.Poi.Coordinate> {
+        Taxis.Poi.Coordinate> {
     override fun map(input: TaxisDataModel.PoiDataModel.CoordinateDataModel?): Taxis.Poi.Coordinate {
         return Taxis.Poi.Coordinate(
             latitude = input?.latitude ?: 53.44712321601976,

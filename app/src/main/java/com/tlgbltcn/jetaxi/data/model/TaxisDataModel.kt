@@ -1,10 +1,9 @@
 package com.tlgbltcn.jetaxi.data.model
 
-
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 import androidx.annotation.Keep
 import com.tlgbltcn.jetaxi.domain.model.FleetType
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 @Keep
 @Serializable

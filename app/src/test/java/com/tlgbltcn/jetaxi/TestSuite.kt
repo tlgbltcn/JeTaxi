@@ -1,14 +1,13 @@
 package com.tlgbltcn.jetaxi
 
 import android.os.Build
-import com.tlgbltcn.jetaxi.data.remote.JeTaxiServiceTest
 import com.tlgbltcn.jetaxi.data.mapper.MapperTest
+import com.tlgbltcn.jetaxi.data.remote.JeTaxiServiceTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.serialization.ExperimentalSerializationApi
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 import org.robolectric.annotation.Config
-
 
 @ExperimentalSerializationApi
 @ExperimentalCoroutinesApi

@@ -52,7 +52,6 @@ class MapperTest {
         assert(result.poiList.get(0).id == data.poiList?.get(0)?.id)
     }
 
-
     @Test
     fun `poiList shouldn't be empty or null`() {
 
