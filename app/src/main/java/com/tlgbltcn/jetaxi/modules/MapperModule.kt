@@ -3,29 +3,25 @@ package com.tlgbltcn.jetaxi.modules
 import com.tlgbltcn.jetaxi.data.mapper.CoordinateMapper
 import com.tlgbltcn.jetaxi.data.mapper.PoiMapper
 import com.tlgbltcn.jetaxi.data.mapper.TaxisMapper
+import com.tlgbltcn.jetaxi.data.model.TaxisDataModel
+import com.tlgbltcn.jetaxi.domain.model.Taxis
+import com.tlgbltcn.jetaxi.util.ListMapper
+import com.tlgbltcn.jetaxi.util.Mapper
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 
-@InstallIn(ActivityRetainedComponent::class)
 @Module
-class MapperModule {
+@InstallIn(ActivityRetainedComponent::class)
+abstract class MapperModule {
 
-    @Provides
-    fun provideTaxisMapper(
-        poiMapper: PoiMapper
-    ): TaxisMapper = TaxisMapper(
-        poiMapper = poiMapper
-    )
+    @Binds
+    abstract fun provideCoordinateMapper(mapper: CoordinateMapper): Mapper<TaxisDataModel.PoiDataModel.CoordinateDataModel, Taxis.Poi.Coordinate>
 
-    @Provides
-    fun providePoiMapper(
-        coordinateMapper: CoordinateMapper
-    ): PoiMapper = PoiMapper(
-        coordinateMapper = coordinateMapper
-    )
+    @Binds
+    abstract fun providePoiMapper(listMapper: PoiMapper): ListMapper<TaxisDataModel.PoiDataModel, Taxis.Poi>
 
-    @Provides
-    fun provideCoordinateMapper(): CoordinateMapper = CoordinateMapper()
+    @Binds
+    abstract fun provideTaxiMapper(mapper: TaxisMapper): Mapper<TaxisDataModel, Taxis>
 }
