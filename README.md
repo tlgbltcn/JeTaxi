@@ -41,7 +41,7 @@ KEY={insert_the_key_here}
 While restricting the Key to Android apps, use `com.tlgbltcn.jetaxi` as package name, and
 `C2:C6:50:35:30:03:7B:05:62:34:1E:C2:48:3F:73:81:2B:68:C2:7D` as ```SHA-1``` certificate fingerprint. 
 
-Otherwise, you don't might be able to see the map on your emulator or device. 
+Otherwise, you might not be able to see the map on your emulator or device. 
 
 <p align="center">
   <img src="/failure.png">
